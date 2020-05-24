@@ -105,8 +105,8 @@ exec numactl --cpunodebind=0  --membind=0 bin/tidb-server \
     --config=conf/tidb.toml \
     --log-slow-query="/home/damon/deploy/tidb1-1/log/tidb_slow_query.log" \
     --log-file="/home/damon/deploy/tidb1-1/log/tidb.log" 2>> "/home/damon/deploy/tidb1-1/log/tidb_stderr.log"
-
 ```
+
 >注意：直接修改 run_tidb.sh 可能会被覆盖。因此在生产环境中，如有绑核需求，建议使用 [Tiup 绑核](/production-deployment-using-tiup.md#拓扑信息-1) 。
 
 最后，可以选择部署一个 HAproxy 来进行多个 TiDB node 的负载均衡，推荐配置 nbproc 为 CPU 核数。
